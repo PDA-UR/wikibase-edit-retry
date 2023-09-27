@@ -9,15 +9,10 @@
 		"lib"
 	],
 	"scripts": {
-		"git-pre-commit": "./scripts/githooks/pre-commit",
 		"lint": "eslint -c .eslintrc.cjs lib tests",
-		"lint:fix": "eslint -c .eslintrc.cjs --fix lib tests",
 		"test": "npm run test:unit && npm run test:integration",
 		"test:unit": "mocha $MOCHA_OPTIONS tests/unit/*.js tests/unit/*/*.js",
 		"test:integration": "mocha $MOCHA_OPTIONS tests/integration/*.js tests/integration/*/*.js",
-		"prepublishOnly": "npm run lint && npm test",
-		"postpublish": "git push --tags",
-		"postversion": "./scripts/postversion",
 		"update-toc": "./scripts/update_toc"
 	},
 	"repository": {
